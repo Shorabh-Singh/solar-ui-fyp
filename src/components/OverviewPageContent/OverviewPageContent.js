@@ -22,6 +22,62 @@ class OverviewPageContent extends Component {
           </Grid.Column>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
             <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
+              <Header icon='sun' content='Solar Radiance'/>
+              <p>Solar radiance at each panel.</p>
+              <SolarRadianceChartContainer/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+            <Segment>
               <Header icon='tachometer alternate' content='Power Output'/>
               <p>Power output by the inverter.</p>
               <PowerOutputChartContainer/>

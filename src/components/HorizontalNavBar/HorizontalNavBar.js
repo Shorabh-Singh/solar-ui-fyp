@@ -60,7 +60,7 @@ class HorizontalNavBar extends Component {
                      className='hidden-on-small-monitor hidden-on-large-monitor'/>
 
           <Menu.Item as='a' onClick={onClickLink} header>
-            <Icon name='sun' color='yellow'/> MySolarSystem
+            <Icon name='sun' color='yellow'/> SunFlow - NIT Sikkiim
           </Menu.Item>
           <Menu.Item as='a' className='hidden-on-tablet hidden-on-phone' active>Overview</Menu.Item>
           <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Solar Panels</Menu.Item>
