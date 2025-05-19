@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Icon, Table} from 'semantic-ui-react';
+import {Button, Checkbox, Table} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import './PanelStatusTable.css';
 
