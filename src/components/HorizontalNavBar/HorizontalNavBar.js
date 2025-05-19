@@ -62,10 +62,10 @@ class HorizontalNavBar extends Component {
           <Menu.Item as='a' onClick={onClickLink} header>
             <Icon name='sun' color='yellow'/> SunFlow - NIT Sikkiim
           </Menu.Item>
-          <Menu.Item as='a' className='hidden-on-tablet hidden-on-phone' active>Overview</Menu.Item>
-          <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Solar Panels</Menu.Item>
+          <Menu.Item as='a' className='hidden-on-tablet hidden-on-phone' active>Dashboard</Menu.Item>
+          {/* <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Solar Panels</Menu.Item>
           <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Inverters</Menu.Item>
-          <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Batteries</Menu.Item>
+          <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Batteries</Menu.Item> */}
 
           <Menu.Menu position='right' className='hidden-on-tablet hidden-on-phone'>
             <Dropdown item icon='dropdown' text={this.state.userName}>

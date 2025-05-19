@@ -85,10 +85,10 @@ class PanelStatusTable extends Component {
                   <Button color='green' disabled={this.allPanelsAreEnabled()} onClick={this.enableAllPanels.bind(this)}>Enable All</Button>
                 </Button.Group>
 
-                <Button size='small' color='green' icon labelPosition='left' floated='right'
+                {/* <Button size='small' color='green' icon labelPosition='left' floated='right'
                         onClick={PanelStatusTable.forkOnGitHub}>
                   <Icon name='fork'/> Fork on GitHub
-                </Button>
+                </Button> */}
               </Table.HeaderCell>
             </Table.Row>
           </Table.Footer>
