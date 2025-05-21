@@ -15,59 +15,59 @@ export const _initialPanelCollection = (function () {
       {
         id: '1',
         enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
+        // inputRadianceKWM2: null,
+        // outputVoltageV: null,
+        // outputCurrentA: null
       },
       {
         id: '2',
         enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
+        // inputRadianceKWM2: null,
+        // outputVoltageV: null,
+        // outputCurrentA: null
       },
       {
         id: '3',
         enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
+        // inputRadianceKWM2: null,
+        // outputVoltageV: null,
+        // outputCurrentA: null
       },
       {
         id: '4',
         enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
+        // inputRadianceKWM2: null,
+        // outputVoltageV: null,
+        // outputCurrentA: null
       },
-      {
-        id: '5',
-        enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
-      },
-      {
-        id: '6',
-        enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
-      },
-      {
-        id: '7',
-        enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
-      },
-      {
-        id: '8',
-        enabled: false,
-        inputRadianceKWM2: null,
-        outputVoltageV: null,
-        outputCurrentA: null
-      }
+      // {
+      //   id: '5',
+      //   enabled: false,
+      //   inputRadianceKWM2: null,
+      //   outputVoltageV: null,
+      //   outputCurrentA: null
+      // },
+      // {
+      //   id: '6',
+      //   enabled: false,
+      //   inputRadianceKWM2: null,
+      //   outputVoltageV: null,
+      //   outputCurrentA: null
+      // },
+      // {
+      //   id: '7',
+      //   enabled: false,
+      //   inputRadianceKWM2: null,
+      //   outputVoltageV: null,
+      //   outputCurrentA: null
+      // },
+      // {
+      //   id: '8',
+      //   enabled: false,
+      //   inputRadianceKWM2: null,
+      //   outputVoltageV: null,
+      //   outputCurrentA: null
+      // }
     ],
     events: [
       {
@@ -101,7 +101,7 @@ export const _initialPanelCollection = (function () {
 
   updateInputRadiances(panelCollection.panels, newInputRadiancesByPanelId);
 
-  enablePanels(panelCollection.panels, ['1', '2', '4', '5', '6', '7', '8']); // Skip panel '3', to keep things interesting.
+  enablePanels(panelCollection.panels, ['1', '2', '3', '4', '5', '6', '7', '8']); // Skip panel '3', to keep things interesting.
 
   return panelCollection;
 })();

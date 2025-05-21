@@ -41,9 +41,9 @@ class PanelStatusTable extends Component {
     return panels.map((panel) => panel.id);
   }
 
-  static forkOnGitHub() {
-    window.location.assign('https://github.com/gitname/solar-ui');
-  }
+  // static forkOnGitHub() {
+  //   window.location.assign('https://github.com/gitname/solar-ui');
+  // }
 
   render() {
     const rows = this.props.panels.map((panel) => {
@@ -54,9 +54,9 @@ class PanelStatusTable extends Component {
                       onChange={this.handleCheckboxChange.bind(this)}/>
           </Table.Cell>
           <Table.Cell className="panel-status-table--data-cell"><a title={'View Panel ' + panel.id + ' details'}>{panel.id}</a></Table.Cell>
-          <Table.Cell disabled={!panel.enabled} className="panel-status-table--data-cell">{panel.inputRadianceKWM2.toFixed(2)} kW/m²</Table.Cell>
+          {/* <Table.Cell disabled={!panel.enabled} className="panel-status-table--data-cell">{panel.inputRadianceKWM2.toFixed(2)} kW/m²</Table.Cell>
           <Table.Cell disabled={!panel.enabled} className="panel-status-table--data-cell">{panel.outputVoltageV.toFixed(2)} V</Table.Cell>
-          <Table.Cell disabled={!panel.enabled} className="panel-status-table--data-cell">{panel.outputCurrentA.toFixed(2)} A</Table.Cell>
+          <Table.Cell disabled={!panel.enabled} className="panel-status-table--data-cell">{panel.outputCurrentA.toFixed(2)} A</Table.Cell> */}
         </Table.Row>
       );
     });
@@ -68,10 +68,10 @@ class PanelStatusTable extends Component {
           <Table.Header fullWidth>
             <Table.Row>
               <Table.HeaderCell>Enabled</Table.HeaderCell>
-              <Table.HeaderCell>Panel</Table.HeaderCell>
-              <Table.HeaderCell>Solar Radiance</Table.HeaderCell>
+              <Table.HeaderCell>Load</Table.HeaderCell>
+              {/* <Table.HeaderCell>Solar Radiance</Table.HeaderCell>
               <Table.HeaderCell>Output Voltage</Table.HeaderCell>
-              <Table.HeaderCell>Output Current</Table.HeaderCell>
+              <Table.HeaderCell>Output Current</Table.HeaderCell> */}
             </Table.Row>
           </Table.Header>
 
