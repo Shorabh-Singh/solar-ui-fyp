@@ -14,9 +14,9 @@ class HorizontalNavBar extends Component {
       userName: ''
     };
   }
-
+               
   /**
-   * Fetch a username from an API endpoint and update this component's state.
+   * Fetch a username from an API endpoint and update this component's state hello sarika!!!!
    *
    * Note: This function gets called after the output of this component has been mounted onto the DOM.
    * Note: Setting `state` in this function will trigger a re-rendering of the component.
