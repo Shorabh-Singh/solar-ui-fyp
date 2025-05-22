@@ -4,10 +4,10 @@ import { getDatabase } from "firebase/database"; // For Realtime DB
 // import { getFirestore } from "firebase/firestore"; // For Firestore
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
+  apiKey: "AIzaSyCXflt8Gmg9-ypxZhZjdgNNIIZGI2NVqMI",
+  authDomain: "jMfbLCOz0Xa2ScZWnkRzdtEkZHR8WIlYIHinotMU",
+  databaseURL: "https://esp32-391de-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "esp32-391de",
   // ...other config
 };
 
