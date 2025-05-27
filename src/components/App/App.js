@@ -6,7 +6,7 @@ import HorizontalNavBarContainer from '../../containers/HorizontalNavBarContaine
 import OverviewPageContent from '../OverviewPageContent/OverviewPageContent';
 import {getNearbyRandomNumber} from '../../lib/random';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import SensorTable from '../SensorTable'; 
+import SensorTable from '../SensorTable/SensorTable'; 
 import './App.css';
 
 class App extends Component {
