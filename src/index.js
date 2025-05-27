@@ -30,9 +30,9 @@ const appStore = createStore(
 
 ReactDOM.render(
   <Provider store={appStore}>
-    <BrowserRouter>
+    <HashRouter>
       <AppContainer/>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );
