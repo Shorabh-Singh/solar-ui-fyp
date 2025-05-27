@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "./firebase";
+import { db } from "../firebase";
 import { ref, onValue } from "firebase/database";
 
 function SensorTable() {
@@ -24,6 +24,10 @@ function SensorTable() {
     return () => unsubscribes.forEach(unsub => unsub());
   }, []);
 
+  // Helper function for safe display
+  const safeValue = value =>
+    (value !== undefined && value !== null) ? value : "-";
+
   return (
     <table>
       <thead>
@@ -37,39 +41,39 @@ function SensorTable() {
       <tbody>
         <tr>
           <td>Current (A)</td>
-          <td>{sensorData.PV.current ?? "-"}</td>
-          <td>{sensorData.Inverter.current ?? "-"}</td>
-          <td>{sensorData.Grid.current ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.current)}</td>
+          <td>{safeValue(sensorData.Inverter.current)}</td>
+          <td>{safeValue(sensorData.Grid.current)}</td>
         </tr>
         <tr>
           <td>Energy (kWh)</td>
-          <td>{sensorData.PV.energy ?? "-"}</td>
-          <td>{sensorData.Inverter.energy ?? "-"}</td>
-          <td>{sensorData.Grid.energy ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.energy)}</td>
+          <td>{safeValue(sensorData.Inverter.energy)}</td>
+          <td>{safeValue(sensorData.Grid.energy)}</td>
         </tr>
         <tr>
           <td>Frequency (Hz)</td>
-          <td>{sensorData.PV.frequency ?? "-"}</td>
-          <td>{sensorData.Inverter.frequency ?? "-"}</td>
-          <td>{sensorData.Grid.frequency ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.frequency)}</td>
+          <td>{safeValue(sensorData.Inverter.frequency)}</td>
+          <td>{safeValue(sensorData.Grid.frequency)}</td>
         </tr>
         <tr>
           <td>PF</td>
-          <td>{sensorData.PV.pf ?? "-"}</td>
-          <td>{sensorData.Inverter.pf ?? "-"}</td>
-          <td>{sensorData.Grid.pf ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.pf)}</td>
+          <td>{safeValue(sensorData.Inverter.pf)}</td>
+          <td>{safeValue(sensorData.Grid.pf)}</td>
         </tr>
         <tr>
           <td>Power (W)</td>
-          <td>{sensorData.PV.power ?? "-"}</td>
-          <td>{sensorData.Inverter.power ?? "-"}</td>
-          <td>{sensorData.Grid.power ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.power)}</td>
+          <td>{safeValue(sensorData.Inverter.power)}</td>
+          <td>{safeValue(sensorData.Grid.power)}</td>
         </tr>
         <tr>
           <td>Voltage (V)</td>
-          <td>{sensorData.PV.voltage ?? "-"}</td>
-          <td>{sensorData.Inverter.voltage ?? "-"}</td>
-          <td>{sensorData.Grid.voltage ?? "-"}</td>
+          <td>{safeValue(sensorData.PV.voltage)}</td>
+          <td>{safeValue(sensorData.Inverter.voltage)}</td>
+          <td>{safeValue(sensorData.Grid.voltage)}</td>
         </tr>
       </tbody>
     </table>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import combinedReducer from './reducers';
+import { BrowserRouter } from 'react-router-dom';
+
 
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
@@ -28,9 +30,12 @@ const appStore = createStore(
 
 ReactDOM.render(
   <Provider store={appStore}>
-    <AppContainer/>
+    <BrowserRouter>
+      <AppContainer/>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
+
 
 registerServiceWorker();

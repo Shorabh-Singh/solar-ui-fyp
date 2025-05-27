@@ -4,47 +4,53 @@ import {Line} from 'react-chartjs-2';
 import palette from '../../lib/color';
 import './PowerOutputChart.css';
 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 class PowerOutputChart extends Component {
   constructor(props) {
     super(props);
 
     const xAxisLabel = 'Time';
-
     const yAxisLabel = 'kW';
 
     this.initialPointRadius = 2;
-
     this.powerLineLabel = 'Power Output';
-
     this.powerLineBackgroundColor = palette.lightGreen.setAlpha(0.1).toString();
-
     this.powerLineBorderColor = palette.lightGreen.toString();
-
     this.timeLabels = ['-5s', '', '', '', '', 'Now'];
 
     this.options = {
       maintainAspectRatio: false,
       scales: {
-        xAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: xAxisLabel
-          },
-          gridLines: {
-            display: false
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: yAxisLabel
-          },
-          ticks: {
-            beginAtZero: true,
-            suggestedMax: 0.5,
-            stepSize: 0.1,
-          }
-        }]
+        x: {
+          title: { display: true, text: xAxisLabel },
+          grid: { display: false }
+        },
+        y: {
+          title: { display: true, text: yAxisLabel },
+          beginAtZero: true,
+          suggestedMax: 0.5,
+          ticks: { stepSize: 0.1 }
+        }
       },
       animation: {
         duration: 0
@@ -52,31 +58,21 @@ class PowerOutputChart extends Component {
       hover: {
         animationDuration: 0,
       },
-      tooltips: {
-        callbacks: {
-          // Display the line label as the tooltip title.
-          title: (tooltipItem, data) => {
-            const datasetIndex = tooltipItem[0].datasetIndex;
-            return data.datasets[datasetIndex].label;
-          },
-          // Display a truncated version of the power value as the tooltip text.
-          label: (tooltipItem, data) => {
-            const powerValue = tooltipItem.yLabel;
-            return powerValue.toFixed(2) + ' kW';
+      plugins: {
+        tooltip: {
+          callbacks: {
+            title: context => context[0].dataset.label,
+            label: context => context.parsed.y.toFixed(2) + ' kW'
           }
-        }
+        },
+        legend: { display: false }
       }
-    };
-
-    this.legend = {
-      display: false
     };
 
     const initialTotalOutputPowerHistory = [null, null, null, null, null, null].map(() => {
       return PowerOutputChart.getTotalOutputPower(this.props.panels);
     });
 
-    // Store these values in the component state so React re-renders the component whenever these values change.
     this.state = {
       totalOutputPowerHistory: initialTotalOutputPowerHistory,
       pointRadius: this.initialPointRadius
@@ -85,10 +81,14 @@ class PowerOutputChart extends Component {
     setInterval(this.updateTotalOutputPowerHistory.bind(this), 1000);
   }
 
-  /**
-   * Update the `totalOutputPowerHistory` property of the state, so it contains the newest output power value,
-   * and no longer contains the oldest output power value.
-   */
+  static getTotalOutputPower(panels) {
+    return panels.reduce((accumulator, panel) => {
+      const outputPowerW = panel.outputVoltageV * panel.outputCurrentA;
+      const outputPowerKW = outputPowerW / 1000;
+      return accumulator + outputPowerKW;
+    }, 0);
+  }
+
   updateTotalOutputPowerHistory() {
     this.setState((prevState, props) => {
       const totalOutputPowerHistory = prevState.totalOutputPowerHistory.concat();
@@ -101,22 +101,7 @@ class PowerOutputChart extends Component {
     });
   }
 
-  /**
-   * Returns the total output power [kW] of all panels, combined.
-   *
-   * @param panels - An array containing `panel` objects.
-   * @return {*} - A number representing the total output power.
-   */
-  static getTotalOutputPower(panels) {
-    return panels.reduce((accumulator, panel) => {
-      const outputPowerW = panel.outputVoltageV * panel.outputCurrentA;
-      const outputPowerKW = outputPowerW / 1000;
-      return accumulator + outputPowerKW;
-    }, 0);
-  }
-
   render() {
-    // Construct the `data` object in the format the `Line` component expects.
     const data = {
       labels: this.timeLabels,
       datasets: [{
@@ -133,7 +118,7 @@ class PowerOutputChart extends Component {
 
     return (
       <div className='power-output-chart--chart-wrapper'>
-        <Line data={data} options={this.options} legend={this.legend}/>
+        <Line data={data} options={this.options} />
       </div>
     );
   }

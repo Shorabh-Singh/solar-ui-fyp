@@ -4,19 +4,24 @@
   "private": true,
   "homepage": "https://shorabh-singh.github.io/solar-ui-fyp",
   "dependencies": {
-    "chart.js": "^2.6.0",
-    "firebase": "^11.8.0",
+    "ajv": "^6.12.6",
+    "ajv-keywords": "^3.5.2",
+    "chart.js": "^3.9.1",
+    "chokidar": "^4.0.3",
+    "firebase": "^11.8.1",
+    "idb": "^4.0.5",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
-    "react": "^16.0.0",
-    "react-chartjs-2": "^2.5.1",
-    "react-dom": "^16.0.0",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^5.0.5",
-    "react-scripts": "^1.1.5",
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^2.2.0",
     "redux": "^3.7.2",
     "semantic-ui-css": "^2.2.11",
-    "semantic-ui-react": "^0.82.0"
+    "semantic-ui-react": "^2.1.4"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
@@ -28,5 +33,20 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
   }
 }

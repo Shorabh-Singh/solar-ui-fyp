@@ -4,26 +4,17 @@ import PropTypes from 'prop-types';
 import palette from '../../lib/color';
 import './EnergyStorageChart.css';
 
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
 class EnergyStorageChart extends Component {
   constructor(props) {
     super(props);
 
-    // Introduction:
-    //
-    // The "occupied" bar refers to the bottom (green) bar, which represents the amount of energy stored in the battery.
-    //
-    // The "vacant" bar refers to the top (gray) bar, which represents the amount of additional energy that can fit in
-    // the battery.
-    //
-    // In the chart, the stack (i.e. the "vacant" bar on top of the "occupied" bar) will represent an "energy container"
-    // of which some portion is occupied (i.e. filled) and some portion is vacant (i.e. empty).
-
     const xAxisLabel = 'Battery';
-
-    const yAxisLabel = 'kW⋅h';
+    const yAxisLabel = 'kW\u00b7h';
 
     this.occupiedBarLabel = 'Energy Stored';
-
     this.vacantBarLabel = 'Free Space';
 
     this.occupiedBarBackgroundColors = [
@@ -44,47 +35,28 @@ class EnergyStorageChart extends Component {
         animationDuration: 0,
       },
       scales: {
-        xAxes: [{
+        x: {
           stacked: true,
-          scaleLabel: {
-            display: true,
-            labelString: xAxisLabel
-          },
-          gridLines: {
-            display: false
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: yAxisLabel
-          },
+          title: { display: true, text: xAxisLabel },
+          grid: { display: false }
+        },
+        y: {
           stacked: true,
-          ticks: {
-            beginAtZero: true,
-            suggestedMax: 15,
-            stepSize: 5,
-          }
-        }]
-      },
-      tooltips: {
-        callbacks: {
-          // Display the bar label as the tooltip title.
-          title: (tooltipItem, data) => {
-            const datasetIndex = tooltipItem[0].datasetIndex;
-            return data.datasets[datasetIndex].label;
-          },
-          // Display a truncated version of the bar value as the tooltip value.
-          label: (tooltipItem, data) => {
-            const barValue = tooltipItem.yLabel;
-            return barValue.toFixed(1) + ' kW⋅h';
-          }
+          title: { display: true, text: yAxisLabel },
+          beginAtZero: true,
+          suggestedMax: 15,
+          ticks: { stepSize: 5 }
         }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            title: context => context[0].dataset.label,
+            label: context => context.parsed.y.toFixed(1) + ' kW\u00b7h'
+          }
+        },
+        legend: { display: false }
       }
-    };
-
-    this.legend = {
-      display: false
     };
   }
 
@@ -103,7 +75,6 @@ class EnergyStorageChart extends Component {
       vacanciesKWh.push(vacancyKWh)
     });
 
-    // Construct the `data` object in the format the `Bar` component expects.
     const data = {
       labels: batteryIds,
       datasets: [{
@@ -123,7 +94,7 @@ class EnergyStorageChart extends Component {
 
     return (
       <div className='energy-storage-chart--chart-wrapper'>
-        <Bar data={data} options={this.options} legend={this.legend}/>
+        <Bar data={data} options={this.options} />
       </div>
     );
   }

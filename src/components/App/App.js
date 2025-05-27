@@ -5,6 +5,8 @@ import VerticalNavBarContainer from '../../containers/VerticalNavBarContainer';
 import HorizontalNavBarContainer from '../../containers/HorizontalNavBarContainer';
 import OverviewPageContent from '../OverviewPageContent/OverviewPageContent';
 import {getNearbyRandomNumber} from '../../lib/random';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import SensorTable from '../SensorTable'; 
 import './App.css';
 
 class App extends Component {
@@ -60,7 +62,12 @@ class App extends Component {
         <VerticalNavBarContainer toggleSidebarVisibility={this.props.toggleSidebarVisibility}/>
         <Sidebar.Pusher onClick={this.hideSidebarIfVisible.bind(this)} dimmed={this.props.sidebarVisible}>
           <HorizontalNavBarContainer/>
-          <OverviewPageContent/>
+<Switch>
+  <Route path="/dashboard" component={OverviewPageContent} />
+  <Route path="/data" component={SensorTable} />
+  <Redirect exact from="/" to="/dashboard" />
+</Switch>
+
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     );
