@@ -69,7 +69,7 @@ class HorizontalNavBar extends Component {
           {/* <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Inverters</Menu.Item>
           <Menu.Item as='a' onClick={onClickLink} className='hidden-on-tablet hidden-on-phone'>Batteries</Menu.Item> */}
 
-          <Menu.Menu position='right' className='hidden-on-tablet hidden-on-phone'>
+          {/* <Menu.Menu position='right' className='hidden-on-tablet hidden-on-phone'>
             <Dropdown item icon='dropdown' text={this.state.userName}>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={onClickLink} icon='user' text='Profile'/>
@@ -79,7 +79,7 @@ class HorizontalNavBar extends Component {
                 <Dropdown.Item onClick={onClickLink} icon='log out' text='Sign out'/>
               </Dropdown.Menu>
             </Dropdown>
-          </Menu.Menu>
+          </Menu.Menu> */}
         </Container>
       </Menu>
     );

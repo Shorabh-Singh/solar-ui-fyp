@@ -27,7 +27,7 @@ function SensorTable() {
     { label: "Energy (kWh)", key: "energy", icon: "battery full" },
     { label: "Frequency (Hz)", key: "frequency", icon: "sync" },
     { label: "Power Factor", key: "pf", icon: "percent" },
-    { label: "Power (W)", key: "power", icon: "lightning" },
+    { label: "Power (kW)", key: "power", icon: "lightning" },
     { label: "Voltage (V)", key: "voltage", icon: "plug" }
   ];
 
@@ -77,3 +77,4 @@ function SensorTable() {
 }
 
 export default SensorTable;
+ 

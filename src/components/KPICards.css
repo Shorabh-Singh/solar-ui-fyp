@@ -1,0 +1,50 @@
+.kpi-block {
+  background: #fff;
+  border: 1px solid #e5e7eb;           /* lighter, subtle border */
+  border-radius: 8px;                  /* less rounded */
+  padding: 1em 1.2em 0.9em 1.2em;      /* more compact */
+  min-height: 100px;                   /* less tall */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04); /* subtle shadow */
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.kpi-block:hover {
+  box-shadow:
+    0 8px 32px rgba(14, 181, 53, 0.17),   /* main green shadow, more spread */
+    0 2px 16px rgba(0,0,0,0.13);          /* subtle dark shadow for depth */
+  border-color: #21ba45;
+  z-index: 2;
+}
+
+
+.kpi-label {
+  font-size: 1.18em;
+  font-weight: 800;                   /* bolder */
+  color: #222;
+  margin-bottom: 0.4em;               /* less space below label */
+  display: flex;
+  align-items: center;
+}
+.kpi-label .icon {
+  font-size: 1.7em !important;        /* larger icon */
+  margin-right: 0.5em !important;
+  font-weight: bold;
+}
+.kpi-value {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0.2em;               /* tighter below value */
+  margin-top: 0.3em;                  /* more space above value */
+  letter-spacing: 0.5px;
+}
+.kpi-subtext {
+  font-size: 0.97em;
+  opacity: 0.85;
+  margin-top: 0.05em;
+}

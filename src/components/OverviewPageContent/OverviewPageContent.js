@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {Container, Grid, Header, Segment, Card, Icon} from 'semantic-ui-react';
-import SolarRadianceChartContainer from "../../containers/SolarRadianceChartContainer";
-import PowerOutputChartContainer from "../../containers/PowerOutputChartContainer";
-import EnergyStorageChartContainer from "../../containers/EnergyStorageChartContainer";
+import ZSourceEfficiencyKPI from "../../components/ZSourceEfficiencyKPI/ZSourceEfficiencyKPI";
+import PowerOutputPV from "../PowerOutputKPI_PV/PowerOutputPV";
+import PowerOutputInverter from "../PowerOutputKPI_Inverter/PowerOutputInverter";
+import PowerOutputGrid from "../PowerOutputKPI_Grid/PowerOutputGrid";
+import DailyGenerationKPI from "../../components/DailyGenerationKPI/DailyGenerationKPI";
+import DailyConsumptionKPI from "../../components/DailyConsumptionKPI/DailyConsumptionKPI";
+import GridImportKPI from "../../components/GridImportKPI/GridImportKPI";
+import GridExportKPI from "../../components/GridExportKPI/GridExportKPI";
 //import LatestEventsFeedContainer from "../../containers/LatestEventsFeedContainer";
 import PanelStatusTableContainer from "../../containers/PanelStatusTableContainer";
 import './OverviewPageContent.css';
@@ -14,77 +19,35 @@ class OverviewPageContent extends Component {
         <Header as='h1' content='Overview' subheader='System status in a nutshell'/>
         <Grid stackable stretched>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='bolt' content='Power Output'/>
-              <p>Power output by the PV.</p>
-              <PowerOutputChartContainer/>
-            </Segment>
+   <PowerOutputPV value="3.2 kW" trend="8.5%" trendColor="#12826c" />
           </Grid.Column>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='bolt' content='Power Output'/>
-              <p>Power output by the Inverter.</p>
-              <PowerOutputChartContainer/>
-            </Segment>
+   <PowerOutputInverter value="3.2 kW" trend="8.5%" trendColor="#12826c" />
           </Grid.Column>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='bolt' content='Power Output'/>
-              <p>Power output by the Grid.</p>
-              <PowerOutputChartContainer/>
-            </Segment>
-          </Grid.Column>
-
-          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='settings' content='Z-Source Inverter Efficiency' />
-              <p>Efficiency of the Z-Source inverter.</p>
-              <SolarRadianceChartContainer/>
-            </Segment>
-          </Grid.Column>
-        
-          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='sun' content='Daily Generation' />
-              <p>Total energy generated today.</p>
-              <SolarRadianceChartContainer/>
-            </Segment>
+   <PowerOutputGrid value="3.2 kW" trend="8.5%" trendColor="#12826c" />
           </Grid.Column>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='chart line' content='Daily Consumption' />
-              <p>Total energy consumed today.</p>
-              <SolarRadianceChartContainer/>
-            </Segment>
+  <ZSourceEfficiencyKPI value="97.8%" trend="0.5%" trendColor="#12826c" />
           </Grid.Column>
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='sign-in alternate' content='Grid Import' />
-              <p>Power imported from the grid.</p>
-              <SolarRadianceChartContainer/>
-            </Segment>
+  <DailyGenerationKPI value="18.4 kWh" trend="4.2%" trendColor="#12826c" />
           </Grid.Column>
-
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='sign-out alternate' content='Grid Export' />
-              <p>Power exported to the grid.</p>
-              <EnergyStorageChartContainer/>
-            </Segment>
+   <DailyConsumptionKPI value="12.7 kWh" trend="2.1%" trendColor="#d9534f" />
           </Grid.Column>
-          {/* <Grid.Column computer={8} largeScreen={4} widescreen={4}>
-            <Segment>
-              <Header icon='clock' content='Latest Events'/>
-              <p>Latest events involving the system.</p>
-              <LatestEventsFeedContainer/>
-            </Segment>
-          </Grid.Column> */}
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+   <GridImportKPI value="1.2 kWh" trend="+15%" trendColor="#d9534f" />
+          </Grid.Column>
+          <Grid.Column computer={8} largeScreen={4} widescreen={4}>
+  <GridExportKPI value="6.9 kWh" trend="+8.3%" trendColor="#12826c" />
+          </Grid.Column>
           <Grid.Column width={16}>
-            <Segment>
-              <Header icon='sliders horizontal' content='Load Status'/>
-              <p>Status of each load.</p>
-              <PanelStatusTableContainer/>
-            </Segment>
+<Segment className="panel-status-table--segment">
+  <Header icon='sliders horizontal' content='Load Status'/>
+  <p>Status of each load.</p>
+  <PanelStatusTableContainer/>
+</Segment>
           </Grid.Column>
           {/* Environmental Prediction Column */}
           <Grid.Column width={16}>
