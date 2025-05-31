@@ -8,6 +8,7 @@ import DailyGenerationKPI from "../../components/DailyGenerationKPI/DailyGenerat
 import DailyConsumptionKPI from "../../components/DailyConsumptionKPI/DailyConsumptionKPI";
 import GridImportKPI from "../../components/GridImportKPI/GridImportKPI";
 import GridExportKPI from "../../components/GridExportKPI/GridExportKPI";
+import PanelStatusTable from "../../components/PanelStatusTable/PanelStatusTable";
 //import LatestEventsFeedContainer from "../../containers/LatestEventsFeedContainer";
 import PanelStatusTableContainer from "../../containers/PanelStatusTableContainer";
 import './OverviewPageContent.css';
@@ -42,13 +43,13 @@ class OverviewPageContent extends Component {
           <Grid.Column computer={8} largeScreen={4} widescreen={4}>
   <GridExportKPI value="6.9 kWh" trend="+8.3%" trendColor="#12826c" />
           </Grid.Column>
-          <Grid.Column width={16}>
-<Segment className="panel-status-table--segment">
-  <Header icon='sliders horizontal' content='Load Status'/>
-  <p>Status of each load.</p>
-  <PanelStatusTableContainer/>
-</Segment>
-          </Grid.Column>
+<Grid.Column width={16}>
+  <Segment className="panel-status-table--segment">
+    <Header icon='sliders horizontal' content='Load Status'/>
+    <p>Status of each load.</p>
+    <PanelStatusTable />
+  </Segment>
+</Grid.Column>
           {/* Environmental Prediction Column */}
           <Grid.Column width={16}>
             <Segment>
