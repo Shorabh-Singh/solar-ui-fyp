@@ -69,7 +69,7 @@ const PanelStatusTable = () => {
           <Table.Row>
             <Table.HeaderCell>Enabled</Table.HeaderCell>
             <Table.HeaderCell>Load</Table.HeaderCell>
-            <Table.HeaderCell>Auto</Table.HeaderCell>
+            <Table.HeaderCell textAlign="center">Auto</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -119,12 +119,19 @@ const PanelStatusTable = () => {
                   Disable All
                 </Button>
                 <Button
-                  color='green'
-                  disabled={allEnabled}
-                  onClick={() => setAllRelays(true)}
-                >
-                  Enable All
-                </Button>
+  color='green'
+  disabled={allEnabled}
+  onClick={() => {
+    relayNames.forEach(relay => {
+      if (!autoDisabled[relay.key]) {
+        toggleRelay(relay.key, true);
+      }
+    });
+  }}
+>
+  Enable All
+</Button>
+
               </Button.Group>
             </Table.HeaderCell>
           </Table.Row>

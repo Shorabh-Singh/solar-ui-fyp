@@ -32,7 +32,7 @@ const GridExportKPI = ({
       </div>
       <div className="kpi-value" style={{ color: "#12826c" }}>{value}</div>
       <div className="kpi-subtext" style={{ color: trendColor }}>
-        {'↑'} {trend} from yesterday
+        {/* {'↑'} {trend} from yesterday */}
       </div>
     </div>
   );

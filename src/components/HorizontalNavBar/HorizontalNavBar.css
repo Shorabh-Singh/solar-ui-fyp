@@ -1,3 +1,25 @@
 .horizontal-nav-bar {
+  min-height: 44px !important;      /* Reduce navbar height */
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
     border-radius: 0 !important;
+}
+
+.horizontal-nav-bar .item {
+  line-height: 28px !important;     /* Reduce line height */
+  font-size: 1.08em;                /* Keep font readable but not huge */
+  font-weight: 600;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.horizontal-nav-bar .header {
+  font-size: 1.15em !important;     /* Slightly larger for header/title */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.horizontal-nav-bar .icon {
+  font-size: 1.2em !important;
+  vertical-align: middle;
 }

@@ -32,7 +32,7 @@ const GridImportKPI = ({
       </div>
       <div className="kpi-value" style={{ color: "#d9534f" }}>{value}</div>
       <div className="kpi-subtext" style={{ color: trendColor }}>
-        {'↑'} {trend} from yesterday
+        {/* {'↑'} {trend} from yesterday */}
       </div>
     </div>
   );

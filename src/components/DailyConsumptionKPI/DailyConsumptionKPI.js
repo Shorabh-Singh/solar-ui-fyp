@@ -12,8 +12,8 @@ const DailyConsumptionKPI = ({
   const [current, setCurrent] = useState(null);
 
   useEffect(() => {
-    const voltageRef = ref(db, "pzem/inverter/voltage");
-    const currentRef = ref(db, "pzem/inverter/current");
+    const voltageRef = ref(db, "pzem/load/voltage");
+    const currentRef = ref(db, "pzem/load/current");
 
     const unsubscribeVoltage = onValue(voltageRef, snapshot => {
       setVoltage(snapshot.val());
@@ -33,7 +33,7 @@ const DailyConsumptionKPI = ({
     voltage !== null && voltage !== undefined &&
     current !== null && current !== undefined
   ) {
-    const calculatedValue = voltage * current * 230 * 24;
+    const calculatedValue = voltage * current * 24;
     value = `${calculatedValue.toFixed(2)} kWh`;
   }
 
@@ -45,7 +45,7 @@ const DailyConsumptionKPI = ({
       </div>
       <div className="kpi-value" style={{ color: "#d9534f" }}>{value}</div>
       <div className="kpi-subtext" style={{ color: trendColor }}>
-        {'↓'} {trend} from yesterday
+        {/* {'↓'} {trend} from yesterday */}
       </div>
     </div>
   );
