@@ -15,7 +15,7 @@ const PowerOutputPV = ({ trend = "+8.5%", trendColor = "#12826c" }) => {
     return () => unsubscribe();
   }, []);
 
-  const value = power !== null && power !== undefined ? `${power} kW` : "_";
+  const value = power !== null && power !== undefined ? `${power} W` : "_";
 
   return (
     <div className="kpi-block">

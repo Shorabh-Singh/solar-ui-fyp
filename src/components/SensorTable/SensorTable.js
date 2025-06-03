@@ -27,7 +27,7 @@ function SensorTable() {
     { label: "Energy (kWh)", key: "energy", icon: "battery full" },
     { label: "Frequency (Hz)", key: "frequency", icon: "sync" },
     { label: "Power Factor", key: "pf", icon: "percent" },
-    { label: "Power (kW)", key: "power", icon: "lightning" },
+    { label: "Power (W)", key: "power", icon: "lightning" },
     { label: "Voltage (V)", key: "voltage", icon: "plug" }
   ];
 
@@ -47,9 +47,10 @@ function SensorTable() {
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Parameter</Table.HeaderCell>
-              <Table.HeaderCell>PV ( Load )</Table.HeaderCell>
-              <Table.HeaderCell>Grid</Table.HeaderCell>
+              <Table.HeaderCell>PV</Table.HeaderCell>
               <Table.HeaderCell>Inverter</Table.HeaderCell>
+              <Table.HeaderCell>Grid</Table.HeaderCell>
+              
             </Table.Row>
           </Table.Header>
           <Table.Body>
