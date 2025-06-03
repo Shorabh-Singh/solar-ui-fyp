@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/solar-ui-fyp/static/css/main.def89ee1.css",
-    "main.js": "/solar-ui-fyp/static/js/main.45cf50c9.js",
+    "main.js": "/solar-ui-fyp/static/js/main.0424592e.js",
     "static/media/brand-icons.svg": "/solar-ui-fyp/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/solar-ui-fyp/static/media/icons.62d9dae4e0040e81c980.svg",
     "static/media/outline-icons.svg": "/solar-ui-fyp/static/media/outline-icons.9c4845b4b41ef40a22fa.svg",
@@ -20,10 +20,10 @@
     "static/media/outline-icons.woff2": "/solar-ui-fyp/static/media/outline-icons.687a4990ea22bb1a49d4.woff2",
     "index.html": "/solar-ui-fyp/index.html",
     "main.def89ee1.css.map": "/solar-ui-fyp/static/css/main.def89ee1.css.map",
-    "main.45cf50c9.js.map": "/solar-ui-fyp/static/js/main.45cf50c9.js.map"
+    "main.0424592e.js.map": "/solar-ui-fyp/static/js/main.0424592e.js.map"
   },
   "entrypoints": [
     "static/css/main.def89ee1.css",
-    "static/js/main.45cf50c9.js"
+    "static/js/main.0424592e.js"
   ]
 }
